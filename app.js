@@ -18,7 +18,7 @@ Date.prototype.vigil = function(vigil, hour) {
 		var settings = Homey.manager('settings').get('settings');
 		if (settings !== null && settings.vigil !== null && settings.vigil === true) {
 			this.setDate(new Date(this.valueOf()).getDate() - 1);
-			this.setHours(18, 0, 0, 0);
+			this.setHours(17, 0, 0, 0);
 		} else {
 			this.setHours(0, 0, 0, 0);
 		}
