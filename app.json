@@ -4,11 +4,35 @@
 		"en": "Christian Dates",
 		"nl": "Christelijke Datums"
 	},
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"compatibility": "0.x || 1.x",
 	"author": {
 		"name": "Marco van 't Klooster",
 		"email": "info@marcovantklooster.nl"
+	},
+	"contributors": {
+        "developers": [
+            {
+                "name": "Marco van 't Klooster",
+				"email": "info@marcovantklooster.nl"
+            }
+        ],
+        "translators": [
+            {
+                 "name": "Marco van 't Klooster",
+				"email": "info@marcovantklooster.nl",
+                "languages": [ "nl", "en" ]
+            }
+        ]
+    },
+    "images": {
+		"large": "./assets/images/large.jpg",
+		"small": "./assets/images/small.jpg"
+	},
+	"category": "tools",
+	"description": {
+		"en": "Christian date conditions to use in your flows",
+		"nl": "Christelijke datum condities om te gebruiken in je flows"
 	},
 	"flow": {
 		"conditions": [{
@@ -29,7 +53,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -41,7 +65,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -76,7 +100,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -88,7 +112,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -123,7 +147,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -135,7 +159,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -170,7 +194,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -182,7 +206,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -223,7 +247,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -235,7 +259,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -270,7 +294,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -282,7 +306,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -317,7 +341,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -329,7 +353,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -370,7 +394,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -382,7 +406,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -423,7 +447,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -435,7 +459,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -470,7 +494,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -482,7 +506,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -517,7 +541,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -529,7 +553,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -564,7 +588,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -576,7 +600,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
@@ -611,7 +635,7 @@
 				}, {
 					"id": "<",
 					"label": {
-						"en": "Before than today",
+						"en": "Before today",
 						"nl": "Eerder dan vandaag"
 					}
 				}, {
@@ -623,7 +647,7 @@
 				}, {
 					"id": "<=",
 					"label": {
-						"en": "Before than today or today",
+						"en": "Before today or today",
 						"nl": "Eerder dan, of vandaag"
 					}
 				}, {
