@@ -1,0 +1,16 @@
+{
+	"settings": {
+		"title": "Christian Dates",
+		"vigil": {
+			"title": "Vigil",
+			"label": "Use vigil",
+			"description": "Use the time of the vigile for the dates that support it"
+		},
+		"buttonSave": "Save",
+		"messages": {
+			"busySaving": "Saving settings to this Homey...",
+			"errorSaving": "Oops... Something went wrong saving your settings",
+			"successSaving": "Settings saved successfully."
+		}
+	}
+}
