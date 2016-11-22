@@ -16,7 +16,7 @@ Date.prototype.addWeeks = function(weeks) {
 Date.prototype.vigil = function(vigil, hour) {
 	if (vigil) {
 		var settings = Homey.manager('settings').get('settings');
-		if (settings !== null && settings.vigil !== null && settings.vigil === true) {
+		if (settings !== undefined && settings !== null && settings.vigil !== undefined && settings.vigil !== null && settings.vigil === true) {
 			this.setDate(new Date(this.valueOf()).getDate() - 1);
 			this.setHours(17, 0, 0, 0);
 		} else {

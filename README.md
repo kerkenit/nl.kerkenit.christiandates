@@ -50,3 +50,7 @@ All the dates below can be compared
 In settings of this app you can set if you prefer that the the current date compares with the vigil time.
 So at the vigil before the feast the flow conditions will pass.
 > Example: The first Sunday from Advent start at the Saturday before at 5pm.
+
+##Version 1.0.1
+
+* Bug fixed: Issue when vigil isn't configured
