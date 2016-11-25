@@ -35,17 +35,8 @@ module.exports.init = init;
 var match = {
 	today: new Date(),
 	matchDate: null,
-	vigil: false,
-	vigilDate: function(hour) {
-		matchDate.vigil(this.vigil, hour);
-		if (!this.vigil && hour === 0) {
-			this.today.setHours(0, 0, 0, 0);
-		}
-	},
-	condition: function(condition, matchDate, vigil, hour) {
+	condition: function(condition, matchDate) {
 		this.matchDate = matchDate;
-		this.vigil = vigil;
-		this.vigil(hour);
 		Homey.log(matchDate);
 		switch (condition) {
 		case '>':
@@ -89,13 +80,19 @@ var match = {
 			'start': start,
 			'end': end
 		});
-		return (this.start >= this.today && end <= this.today);
+		return (start >= this.today && end <= this.today);
 	}
 };
 var calendar = {
+	today: new Date(),
 	year: (new Date()).getFullYear(),
+	month: (new Date()).getMonth() + 1,
 	christmas: function() {
-		return new Date(this.year, 12 - 1, 25);
+		var year = this.year;
+		if(this.month === 1 && this.epiphany <= this.today) {
+			year = this.year - 1;
+		}
+		return new Date(year, 12 - 1, 25);
 	},
 	advent: function() {
 		var advent = this.christmas().getTime() - (((3 * 7) + 1) * (60 * 60 * 24 * 1000));
@@ -105,7 +102,7 @@ var calendar = {
 		return new Date(advent);
 	},
 	epiphany: function() {
-		var epiphany = new Date(this.year, 1 - 1, 2).getTime();
+		var epiphany = new Date((this.month >= 11 ? this.year + 1 : this.year), 1 - 1, 2).getTime();
 		while (((new Date(epiphany)).getDay() % 7) !== 0) {
 			epiphany += (60 * 60 * 24 * 1000);
 		}
@@ -140,44 +137,44 @@ Homey.manager('flow').on('condition.isLent', function(callback, args, state) {
 	callback(null, match.between(calendar.easter().addDays(-46).vigil(false), calendar.easter().vigil(true)));
 });
 Homey.manager('flow').on('condition.isEaster', function(callback, args, state) {
-	callback(null, match.between(calendar.easter().vigil(true), calendar.pentecost().addDays(1)));
+	callback(null, match.between(calendar.easter().vigil(false), calendar.pentecost().addDays(2)));
 });
 Homey.manager('flow').on('condition.Advent_1', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent()));
+	callback(null, match.condition(args.condition, calendar.advent().vigil(true)));
 });
 Homey.manager('flow').on('condition.Advent_2', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent().addWeeks(1), true, 0));
+	callback(null, match.condition(args.condition, calendar.advent().addWeeks(1).vigil(true)));
 });
 Homey.manager('flow').on('condition.Advent_3', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent().addWeeks(2), true, 0));
+	callback(null, match.condition(args.condition, calendar.advent().addWeeks(2).vigil(true)));
 });
 Homey.manager('flow').on('condition.Advent_4', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent().addWeeks(3), true, 0));
+	callback(null, match.condition(args.condition, calendar.advent().addWeeks(3).vigil(true)));
 });
 Homey.manager('flow').on('condition.ChristmasEve', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.christmas().addDays(-1), false, 16));
+	callback(null, match.condition(args.condition, calendar.christmas().addDays(-1).vigil(false, 16)));
 });
 Homey.manager('flow').on('condition.Christmas', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.christmas(), false, 0));
+	callback(null, match.condition(args.condition, calendar.christmas()));
 });
 Homey.manager('flow').on('condition.SecondDayOfChristmas', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.christmas(), false, 0));
+	callback(null, match.condition(args.condition, calendar.christmas().addDays(1)));
 });
 Homey.manager('flow').on('condition.Epiphany', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.epiphany(), true, 0));
+	callback(null, match.condition(args.condition, calendar.epiphany().vigil(false)));
 });
 Homey.manager('flow').on('condition.PalmSunday', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter().addDays(-7), true, 0));
+	callback(null, match.condition(args.condition, calendar.easter().addDays(-7).vigil(true)));
 });
 Homey.manager('flow').on('condition.HolyThursday', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter().addDays(-3), false, 0));
+	callback(null, match.condition(args.condition, calendar.easter().addDays(-3)));
 });
 Homey.manager('flow').on('condition.GoodFriday', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter().addDays(-2), false, 0));
+	callback(null, match.condition(args.condition, calendar.easter().addDays(-2)));
 });
 Homey.manager('flow').on('condition.Easter', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter(), false, 0));
+	callback(null, match.condition(args.condition, calendar.easter()));
 });
 Homey.manager('flow').on('condition.Pentecost', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter(), false, 0));
+	callback(null, match.condition(args.condition, calendar.easter().vigil(true)));
 });
