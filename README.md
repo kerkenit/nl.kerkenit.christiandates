@@ -47,9 +47,14 @@ All the dates below can be compared
   - Pentecost
 
 ## Settings
-In settings of this app you can set if you prefer that the the current date compares with the vigil time.
+In the settings of this app you can set if you prefer that the the current date compares with the vigil time.
 So at the vigil before the feast the flow conditions will pass.
 > Example: The first Sunday from Advent start at the Saturday before at 5pm.
+
+## Like it?
+
+Do you want to support me to continue development?
+[![PayPal](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-34px.png)](http://PayPal.Me/KerkEnIT)
 
 ##Version 1.0.1
 

@@ -89,7 +89,7 @@ var calendar = {
 	month: (new Date()).getMonth() + 1,
 	christmas: function() {
 		var year = this.year;
-		if(this.month === 1 && this.epiphany <= this.today) {
+		if(this.month === 1 || this.epiphany >= this.today) {
 			year = this.year - 1;
 		}
 		return new Date(year, 12 - 1, 25);
