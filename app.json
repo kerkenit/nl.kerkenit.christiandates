@@ -11,21 +11,17 @@
 		"email": "info@marcovantklooster.nl"
 	},
 	"contributors": {
-        "developers": [
-            {
-                "name": "Marco van 't Klooster",
-				"email": "info@marcovantklooster.nl"
-            }
-        ],
-        "translators": [
-            {
-                 "name": "Marco van 't Klooster",
-				"email": "info@marcovantklooster.nl",
-                "languages": [ "nl", "en" ]
-            }
-        ]
-    },
-    "images": {
+		"developers": [{
+			"name": "Marco van 't Klooster",
+			"email": "info@marcovantklooster.nl"
+		}],
+		"translators": [{
+			"name": "Marco van 't Klooster",
+			"email": "info@marcovantklooster.nl",
+			"languages": ["nl", "en"]
+		}]
+	},
+	"images": {
 		"large": "./assets/images/large.jpg",
 		"small": "./assets/images/small.jpg"
 	},
@@ -618,6 +614,53 @@
 				}]
 			}]
 		}, {
+			"id": "Ascension",
+			"title": {
+				"en": "Ascension",
+				"nl": "Hemelvaart"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
 			"id": "Pentecost",
 			"title": {
 				"en": "Pentecost",
@@ -669,6 +712,112 @@
 			"title": {
 				"en": "It !{{is|isn't}} the Easter season",
 				"nl": "Het !{{is|is niet}} de Pasentijd"
+			}
+		}, {
+			"id": "AssumptionOfMary",
+			"title": {
+				"en": "Assumption of Mary",
+				"nl": "Maria-Tenhemelopneming"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "AllSaintsDay",
+			"title": {
+				"en": "All Saints' Day",
+				"nl": "Allerheiligen"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "isFeastDay",
+			"title": {
+				"en": "Today it !{{is|isn't}} a Feast day",
+				"nl": "Vandaag !{{is het |is het geen}} (hoog)feest"
+			}
+		}, {
+			"id": "isSunday",
+			"title": {
+				"en": "Today it !{{is|isn't}} a Feast day or Sunday",
+				"nl": "Vandaag !{{is het|is het geen}} (hoog)feest of zondag"
 			}
 		}]
 	}
