@@ -56,6 +56,17 @@ So at the vigil before the feast the flow conditions will pass.
 Do you want to support me to continue development?
 [![PayPal](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-34px.png)](http://PayPal.Me/KerkEnIT)
 
-##Version 1.0.1
+## Changelog
 
+###Version 1.2.x
+* Added card Feast of the Ascension
+* Added card Assumption of Mary
+* Added card All Saints' Day
+* Added card if today is Sunday or a Feast day
+
+###Version 1.1.x
+* Bug fixed: Advent an Christmas logic
+
+
+###Version 1.0.x
 * Bug fixed: Issue when vigil isn't configured
