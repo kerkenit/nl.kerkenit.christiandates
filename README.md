@@ -38,6 +38,7 @@ All the dates below can be compared
   - First Christmas Day
   - Second Day of Christmas
   - Epiphany
+  - Candlemas
 * Holy Week
   - Palm Sunday
   - Holy Thursday
@@ -54,9 +55,13 @@ So at the vigil before the feast the flow conditions will pass.
 ## Like it?
 
 Do you want to support me to continue development?
-[![PayPal](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-34px.png)](http://PayPal.Me/KerkEnIT)
+[![PayPal](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-34px.png)](https://www.paypal.me/kerkenit)
 
 ## Changelog
+
+###Version 1.3.x
+* Added card Candlemas, also known as the Feast of the Presentation of Our Lord Jesus and the Feast of the Purification of the Blessed Virgin Mary
+* Bug fixed: Time selection
 
 ###Version 1.2.x
 * Added card Feast of the Ascension

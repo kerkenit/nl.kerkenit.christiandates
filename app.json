@@ -4,7 +4,7 @@
 		"en": "Christian Dates",
 		"nl": "Christelijke Datums"
 	},
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"compatibility": "0.x || 1.x",
 	"author": {
 		"name": "Marco van 't Klooster",
@@ -377,6 +377,53 @@
 			"title": {
 				"en": "Epiphany",
 				"nl": "Openbaring van de Heer"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Candlemas",
+			"title": {
+				"en": "Candlemas",
+				"nl": "Maria-Lichtmis"
 			},
 			"args": [{
 				"name": "condition",

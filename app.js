@@ -124,7 +124,7 @@ var calendar = {
 	},
 	christmas: function(vigil) {
 		var year = this.year;
-		if (this.month === 1 || this.epiphany >= this.today) {
+		if (this.month === 1 || this.month === 2 || this.epiphany >= this.today) {
 			year = this.year - 1;
 		}
 		return new Date(year, (12 - 1), 25).vigil(vigil);
@@ -137,11 +137,14 @@ var calendar = {
 		return new Date(advent).vigil(vigil);
 	},
 	epiphany: function(vigil) {
-		var epiphany = new Date((this.month >= 11 ? (this.year + 1) : this.year), 1 - 1, 2).getTime();
+		var epiphany = new Date((this.month >= 11 ? (this.year + 1) : this.year), 0, 2).getTime();
 		while (((new Date(epiphany)).getDay() % 7) !== 0) {
 			epiphany += (60 * 60 * 24 * 1000);
 		}
 		return new Date(epiphany).vigil(vigil);
+	},
+	candlemas: function(vigil) {
+		return this.christmas().addDays(40).vigil(vigil);
 	},
 	easter: function(vigil) {
 		var C = Math.floor(this.year / 100);
@@ -208,6 +211,9 @@ Homey.manager('flow').on('condition.SecondDayOfChristmas', function(callback, ar
 });
 Homey.manager('flow').on('condition.Epiphany', function(callback, args, state) {
 	callback(null, match.condition(args.condition, calendar.epiphany(false)));
+});
+Homey.manager('flow').on('condition.Candlemas', function(callback, args, state) {
+	callback(null, match.condition(args.condition, calendar.candlemas(false)));
 });
 Homey.manager('flow').on('condition.PalmSunday', function(callback, args, state) {
 	callback(null, match.condition(args.condition, calendar.easter(true).addDays(-7)));
