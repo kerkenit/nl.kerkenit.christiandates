@@ -41,24 +41,24 @@ var match = {
 		Homey.log(matchDate);
 		switch (condition) {
 		case '>':
-			if (this.today < matchDate) {
+			if (this.today.getTime() > matchDate.getTime()) {
 				return true;
 			}
 			break;
 		case '<':
-			if (this.today > matchDate) {
+			if (this.today.getTime() < matchDate.getTime()) {
 				return true;
 			}
 			break;
 		case '>=':
 			this.today.setHours(0, 0, 0, 0);
 			matchDate.setHours(0, 0, 0, 0);
-			if (this.today <= matchDate) {
+			if (this.today.getTime() >= matchDate.getTime()) {
 				return true;
 			}
 			break;
 		case '<=':
-			if (this.today >= matchDate) {
+			if (this.today.getTime() <= matchDate.getTime()) {
 				return true;
 			}
 			break;
