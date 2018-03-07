@@ -21,6 +21,16 @@
 			"languages": ["nl", "en"]
 		}]
 	},
+	"contributing": {
+        "donate": {
+            "paypal": {
+                "username": "kerkenit"
+            }
+        }
+    },
+    "bugs": {
+        "url": "https://github.com/kerkenit/nl.kerkenit.christiandates/issues"
+    },
 	"images": {
 		"large": "./assets/images/large.jpg",
 		"small": "./assets/images/small.jpg"
