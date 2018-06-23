@@ -55,10 +55,10 @@ So at the vigil before the feast the flow conditions will pass.
 ## Like it?
 
 Do you want to support me to continue development?
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2d9bcf5c47e643bb9f5c2e6acc23ac9c)](https://app.codacy.com/app/kerkenit/nl.kerkenit.christiandates?utm_source=github.com&utm_medium=referral&utm_content=kerkenit/nl.kerkenit.christiandates&utm_campaign=badger)
 [![PayPal](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-34px.png)](https://www.paypal.me/kerkenit)
 
 ## Changelog
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2d9bcf5c47e643bb9f5c2e6acc23ac9c)](https://app.codacy.com/app/kerkenit/nl.kerkenit.christiandates?utm_source=github.com&utm_medium=referral&utm_content=kerkenit/nl.kerkenit.christiandates&utm_campaign=badger)
 
 ###Version 1.3.x
 * Added card Candlemas, also known as the Feast of the Presentation of Our Lord Jesus and the Feast of the Purification of the Blessed Virgin Mary
