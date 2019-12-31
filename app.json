@@ -1,0 +1,877 @@
+{
+	"id": "nl.kerkenit.christiandates",
+	"sdk": 2,
+	"name": {
+		"en": "Christian Dates",
+		"nl": "Christelijke Datums"
+	},
+	"version": "1.3.1",
+	"compatibility": "0.x || 1.x",
+	"author": {
+		"name": "Marco van 't Klooster",
+		"email": "info@marcovantklooster.nl"
+	},
+	"contributors": {
+		"developers": [{
+			"name": "Marco van 't Klooster",
+			"email": "info@marcovantklooster.nl"
+		}]
+	},
+	"contributing": {
+        "donate": {
+            "paypal": {
+                "username": "kerkenit"
+            }
+        }
+    },
+    "bugs": {
+        "url": "https://github.com/kerkenit/nl.kerkenit.christiandates/issues"
+    },
+	"images": {
+		"large": "./assets/images/large.jpg",
+		"small": "./assets/images/small.jpg"
+	},
+	"category": "tools",
+	"description": {
+		"en": "Christian date conditions to use in your flows",
+		"nl": "Christelijke datum condities om te gebruiken in je flows"
+	},
+	"flow": {
+		"conditions": [{
+			"id": "Advent_1",
+			"title": {
+				"en": "First Sunday of Advent",
+				"nl": "1e zondag van de Advent"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Advent_2",
+			"title": {
+				"en": "Second Sunday of Advent",
+				"nl": "2e zondag van de Advent"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Advent_3",
+			"title": {
+				"en": "Third Sunday of Advent",
+				"nl": "3e zondag van de Advent"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Advent_4",
+			"title": {
+				"en": "Fourth Sunday of Advent",
+				"nl": "4e zondag van de Advent}"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "isAdvent",
+			"title": {
+				"en": "It !{{is|isn't}} Advent",
+				"nl": "Het !{{is|is niet}} Advent"
+			}
+		}, {
+			"id": "ChristmasEve",
+			"title": {
+				"en": "Christmas Eve",
+				"nl": "Kerstavond"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Christmas",
+			"title": {
+				"en": "First Christmas Day",
+				"nl": "Eerste Kerstdag"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "SecondDayOfChristmas",
+			"title": {
+				"en": "Second Day of Christmas",
+				"nl": "Tweede Kerstdag"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "isChristmas",
+			"title": {
+				"en": "It !{{is|isn't}} the Christmas season",
+				"nl": "Het !{{is|is niet}} de Kertstijd"
+			}
+		}, {
+			"id": "Epiphany",
+			"title": {
+				"en": "Epiphany",
+				"nl": "Openbaring van de Heer"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Candlemas",
+			"title": {
+				"en": "Candlemas",
+				"nl": "Maria-Lichtmis"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "isLent",
+			"title": {
+				"en": "It !{{is|isn't}} Lent",
+				"nl": "Het !{{is|is niet}} de veertigdagentijd"
+			}
+		}, {
+			"id": "PalmSunday",
+			"title": {
+				"en": "Palm Sunday",
+				"nl": "Palmzondag"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "HolyThursday",
+			"title": {
+				"en": "Holy Thursday",
+				"nl": "Witte Donderdag"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "GoodFriday",
+			"title": {
+				"en": "Good Friday",
+				"nl": "Goede Vrijdag"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Easter",
+			"title": {
+				"en": "Easter",
+				"nl": "Pasen"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Ascension",
+			"title": {
+				"en": "Ascension",
+				"nl": "Hemelvaart"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "Pentecost",
+			"title": {
+				"en": "Pentecost",
+				"nl": "Pinksteren"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "isEaster",
+			"title": {
+				"en": "It !{{is|isn't}} the Easter season",
+				"nl": "Het !{{is|is niet}} de Pasentijd"
+			}
+		}, {
+			"id": "AssumptionOfMary",
+			"title": {
+				"en": "Assumption of Mary",
+				"nl": "Maria-Tenhemelopneming"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "AllSaintsDay",
+			"title": {
+				"en": "All Saints' Day",
+				"nl": "Allerheiligen"
+			},
+			"args": [{
+				"name": "condition",
+				"type": "dropdown",
+				"values": [{
+					"id": ">",
+					"label": {
+						"en": "Later than today",
+						"nl": "Later dan vandaag"
+					}
+				}, {
+					"id": "<",
+					"label": {
+						"en": "Before today",
+						"nl": "Eerder dan vandaag"
+					}
+				}, {
+					"id": ">=",
+					"label": {
+						"en": "Later than today or today",
+						"nl": "Later dan, of vandaag"
+					}
+				}, {
+					"id": "<=",
+					"label": {
+						"en": "Before today or today",
+						"nl": "Eerder dan, of vandaag"
+					}
+				}, {
+					"id": "===",
+					"label": {
+						"en": "Today",
+						"nl": "Vandaag"
+					}
+				}, {
+					"id": "!==",
+					"label": {
+						"en": "Not today",
+						"nl": "Niet vandaag"
+					}
+				}]
+			}]
+		}, {
+			"id": "isFeastDay",
+			"title": {
+				"en": "Today it !{{is|isn't}} a Feast day",
+				"nl": "Vandaag !{{is het |is het geen}} (hoog)feest"
+			}
+		}, {
+			"id": "isSunday",
+			"title": {
+				"en": "Today it !{{is|isn't}} a Feast day or Sunday",
+				"nl": "Vandaag !{{is het|is het geen}} (hoog)feest of zondag"
+			}
+		}]
+	}
+}

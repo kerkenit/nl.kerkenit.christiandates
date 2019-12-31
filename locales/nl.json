@@ -1,0 +1,16 @@
+{
+	"settings": {
+		"title": "Christelijke Datums",
+		"vigil": {
+			"title": "Vooravond",
+			"label": "Vooravond gebruiken",
+			"description": "Gebruik de tijd van de vooravond waar het gebruikt kan worden"
+		},
+		"buttonSave": "Opslaan",
+		"messages": {
+			"busySaving": "Instelling opslaan op deze Homey...",
+			"errorSaving": "Oeps... Er ging iets fout bij het opslaan van de instellingen",
+			"successSaving": "Instelling opgeslagen."
+		}
+	}
+}
