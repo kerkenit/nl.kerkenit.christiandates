@@ -1,5 +1,6 @@
 {
 	"id": "nl.kerkenit.christiandates",
+	"sdk": 2,
 	"name": {
 		"en": "Christian Dates",
 		"nl": "Christelijke Datums"
@@ -14,11 +15,6 @@
 		"developers": [{
 			"name": "Marco van 't Klooster",
 			"email": "info@marcovantklooster.nl"
-		}],
-		"translators": [{
-			"name": "Marco van 't Klooster",
-			"email": "info@marcovantklooster.nl",
-			"languages": ["nl", "en"]
 		}]
 	},
 	"contributing": {

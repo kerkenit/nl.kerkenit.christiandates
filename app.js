@@ -1,10 +1,7 @@
-/* global Homey, module */
 (function() {
 	'use strict';
 }());
-var init = function() {
-		Homey.log("Jesus he knows me and he knows I'm right. I've been talking to Jesus all my life");
-	};
+
 Date.prototype.addDays = function(days) {
 	var dat = new Date(this.valueOf());
 	dat.setDate(dat.getDate() + days);
@@ -19,11 +16,11 @@ Date.prototype.vigil = function(vigil, hour) {
 		today.setHours(0, 0, 0, 0);
 		this.setHours(0, 0, 0, 0);
 		if (this.getTime() !== today.getTime()) {
-			var settings = Homey.manager('settings').get('settings');
-			if (settings !== undefined && settings !== null && settings.vigil !== undefined && settings.vigil !== null && settings.vigil === true) {
+			var settings = Homey.ManagerSettings.get('vigil', ( err, result ) => {
+				if( err ) return;
 				this.setDate(new Date(this.valueOf()).getDate() - 1);
 				this.setHours(17, 0, 0, 0);
-			}
+			});
 		}
 	} else if (hour !== undefined && hour !== null) {
 		if (hour === 0) {
@@ -34,11 +31,21 @@ Date.prototype.vigil = function(vigil, hour) {
 	}
 	return this;
 };
-module.exports.init = init;
+
+
+const Homey = require('homey');
+
+class ChristianDates extends Homey.App {
+
+	onInit() {
+    this.log("Jesus he knows me and he knows I'm right. I've been talking to Jesus all my life");
+  }
+}
+
 var match = {
 	today: new Date(),
 	condition: function(condition, matchDate) {
-		Homey.log(matchDate);
+		console.log(matchDate);
 		switch (condition) {
 		case '>':
 			if (this.today.getTime() > matchDate.getTime()) {
@@ -79,13 +86,13 @@ var match = {
 			}
 			break;
 		default:
-			Homey.log(condition);
+			console.log(condition);
 			return false;
 		}
 		return false;
 	},
 	between: function(start, end) {
-		Homey.log({
+		console.log({
 			'start': start,
 			'end': end,
 			'after': this.today.getTime() >= start.getTime(),
@@ -175,77 +182,99 @@ var calendar = {
 		return new Date(year, (11 - 1), 1).vigil(vigil);
 	},
 };
-// this is fired when a flow with this trigger has been found
-Homey.manager('flow').on('condition.isAdvent', function(callback, args, state) {
-	callback(null, match.between(calendar.advent(true), calendar.christmas(true)));
+
+
+let isAdvent = new Homey.FlowCardCondition('isAdvent');
+isAdvent.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.between(calendar.advent(true), calendar.christmas(true)));
 });
-Homey.manager('flow').on('condition.isChristmas', function(callback, args, state) {
-	callback(null, match.between(calendar.christmas(true), calendar.epiphany(false)));
+let isChristmas = new Homey.FlowCardCondition('isChristmas');
+isChristmas.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.between(calendar.christmas(true), calendar.epiphany(false)));
 });
-Homey.manager('flow').on('condition.isLent', function(callback, args, state) {
-	callback(null, match.between(calendar.easter(false).addDays(-46), calendar.easter(true)));
+let isLent = new Homey.FlowCardCondition('isLent');
+isLent.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.between(calendar.easter(false).addDays(-46), calendar.easter(true)));
 });
-Homey.manager('flow').on('condition.isEaster', function(callback, args, state) {
-	callback(null, match.between(calendar.easter(true), calendar.pentecost(false).addDays(2)));
+let isEaster = new Homey.FlowCardCondition('isEaster');
+isEaster.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.between(calendar.easter(true), calendar.pentecost(false).addDays(2)));
 });
-Homey.manager('flow').on('condition.Advent_1', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent(true)));
+let Advent_1 = new Homey.FlowCardCondition('Advent_1');
+Advent_1.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.advent(true)));
 });
-Homey.manager('flow').on('condition.Advent_2', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent(true).addWeeks(1)));
+let Advent_2 = new Homey.FlowCardCondition('Advent_2');
+Advent_2.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.advent(true).addWeeks(1)));
 });
-Homey.manager('flow').on('condition.Advent_3', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent(true).addWeeks(2)));
+let Advent_3 = new Homey.FlowCardCondition('Advent_3');
+Advent_3.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.advent(true).addWeeks(2)));
 });
-Homey.manager('flow').on('condition.Advent_4', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.advent(true).addWeeks(3)));
+let Advent_4 = new Homey.FlowCardCondition('Advent_4');
+Advent_4.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.advent(true).addWeeks(3)));
 });
-Homey.manager('flow').on('condition.ChristmasEve', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.christmas(false).addDays(-1).vigil(false, 16)));
+let ChristmasEve = new Homey.FlowCardCondition('ChristmasEve');
+ChristmasEve.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.christmas(false).addDays(-1).vigil(false, 16)));
 });
-Homey.manager('flow').on('condition.Christmas', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.christmas(false)));
+let Christmas = new Homey.FlowCardCondition('Christmas');
+Christmas.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.christmas(false)));
 });
-Homey.manager('flow').on('condition.SecondDayOfChristmas', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.christmas(false).addDays(1)));
+let SecondDayOfChristmas = new Homey.FlowCardCondition('SecondDayOfChristmas');
+SecondDayOfChristmas.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.christmas(false).addDays(1)));
 });
-Homey.manager('flow').on('condition.Epiphany', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.epiphany(false)));
+let Epiphany = new Homey.FlowCardCondition('Epiphany');
+Epiphany.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.epiphany(false)));
 });
-Homey.manager('flow').on('condition.Candlemas', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.candlemas(false)));
+let Candlemas = new Homey.FlowCardCondition('Candlemas');
+Candlemas.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.candlemas(false)));
 });
-Homey.manager('flow').on('condition.PalmSunday', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter(true).addDays(-7)));
+let PalmSunday = new Homey.FlowCardCondition('PalmSunday');
+PalmSunday.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.easter(true).addDays(-7)));
 });
-Homey.manager('flow').on('condition.HolyThursday', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter(false).addDays(-3)));
+let HolyThursday = new Homey.FlowCardCondition('HolyThursday');
+HolyThursday.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.easter(false).addDays(-3)));
 });
-Homey.manager('flow').on('condition.GoodFriday', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter(false).addDays(-2)));
+let GoodFriday = new Homey.FlowCardCondition('GoodFriday');
+GoodFriday.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.easter(false).addDays(-2)));
 });
-Homey.manager('flow').on('condition.Easter', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.easter(false)));
+let Easter = new Homey.FlowCardCondition('Easter');
+Easter.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.easter(false)));
 });
-Homey.manager('flow').on('condition.Ascension', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.ascension(true)));
+let Ascension = new Homey.FlowCardCondition('Ascension');
+Ascension.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.ascension(true)));
 });
-Homey.manager('flow').on('condition.Pentecost', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.pentecost(true)));
+let Pentecost = new Homey.FlowCardCondition('Pentecost');
+Pentecost.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.pentecost(true)));
 });
-Homey.manager('flow').on('condition.AssumptionOfMary', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.assumptionOfMary(true)));
+let AssumptionOfMary = new Homey.FlowCardCondition('AssumptionOfMary');
+AssumptionOfMary.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.assumptionOfMary(true)));
 });
-Homey.manager('flow').on('condition.AllSaintsDay', function(callback, args, state) {
-	callback(null, match.condition(args.condition, calendar.allSaintsDay(true)));
+let AllSaintsDay = new Homey.FlowCardCondition('AllSaintsDay');
+AllSaintsDay.register().registerRunListener((args, state) => {
+	return Promise.resolve(match.condition(args.condition, calendar.allSaintsDay(true)));
 });
-Homey.manager('flow').on('condition.isFeastDay', function(callback) {
-	callback(null, calendar.isFeastDay());
+let isFeastDay = new Homey.FlowCardCondition('isFeastDay');
+isFeastDay.register().registerRunListener((args, state) => {
+	return Promise.resolve(calendar.isFeastDay());
 });
-Homey.manager('flow').on('condition.isSunday', function(callback) {
-	if (calendar.isFeastDay()) {
-		callback(null, true);
-	} else {
-		callback(null, calendar.isSunday());
-	}
+let isSunday = new Homey.FlowCardCondition('isSunday');
+isSunday.register().registerRunListener((args, state) => {
+	return Promise.resolve(calendar.isFeastDay() || calendar.isSunday());
 });
+
+module.exports = ChristianDates;
